@@ -1,0 +1,51 @@
+{% extends "django_task/base.html" %}
+
+{% block title %}django_task Tracker | Dashboard {% endblock %}
+
+{% load    static %}
+{% block css-head %}
+    <link href="{% static 'django_task/css/select2.css' %}" rel="stylesheet">
+    <link href="{% static 'django_task/css/datatables.css' %}" rel="stylesheet">
+
+{% endblock css-head %}
+
+{% block content %}
+    <header class="page-header">
+        <h2>Dashboard</h2>
+        <div class="right-wrapper pull-right">
+            <ol class="breadcrumbs">
+                <li>
+                    <a href="{% url 'dashboard' %}">
+                        <i class="fa fa-home"></i>
+                    </a>
+                </li>
+                <li>
+                <span>
+                    Dashboard
+                </span>
+                </li>
+            </ol>
+        </div>
+    </header>
+
+    <div class="col-md-12 col-lg-12 col-xl-4">
+
+
+    </div>
+
+
+{% endblock content %}
+{% block js-foot %}
+    <script src="{% static 'django_task/js/select2.js' %}"></script>
+    <script src="{% static 'django_task/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'django_task/js/datatables.js' %}"></script>
+    <script src="{% static 'django_task/js/jquery.flot.min.js' %}"></script>
+    <script src="{% static 'django_task/js/jquery.flot.tooltip.js' %}"></script>
+    <script src="{% static 'django_task/js/jquery.flot.categories.min.js' %}"></script>
+
+{% endblock js-foot %}
+
+{% block javascript %}
+
+    <script src="{% static 'django_task/js/dashboard/dashboard.js' %}"></script>
+{% endblock javascript %}

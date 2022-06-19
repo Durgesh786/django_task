@@ -1,0 +1,102 @@
+{% load    static %}
+<!doctype html>
+<html class="fixed">
+<head>
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <meta content="HTML5 Admin Template" name="keywords"/>
+    <meta content="Porto Admin - Responsive HTML5 Template" name="description">
+    <meta content="okler.net" name="author">
+    <title>Login</title>
+    <!-- Mobile Metas -->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light"
+          rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link href="{% static 'django_task/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'django_task/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'django_task/images/favicon.ico' %}" type='image/x-icon' rel="shortcut icon">
+    <!-- Theme CSS -->
+    <link href="{% static 'django_task/css/theme.css' %}" rel="stylesheet">
+
+    <!-- Skin CSS -->
+    <link href="{% static 'django_task/css/default.css' %}" rel="stylesheet">
+
+
+</head>
+<body>
+<!-- start: page -->
+<section class="body-sign">
+    <div class="center-sign">
+        <a class="logo pull-left" href="/">
+            <img alt="Porto Admin" height="54" src="data:image/png;base64,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"/>
+        </a>
+
+        <div class="panel panel-sign">
+            <div class="panel-title-sign mt-xl text-right">
+                <h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> Sign In</h2>
+            </div>
+            <div class="panel-body">
+                {% include 'django_task/base_message.html' %}
+                <form id="loginform" method="post">
+                    {% csrf_token %}
+                    <div class="form-group mb-lg">
+                        <label class="pull-left">Enter Phone Number:</label>
+                        <div class="input-group input-group-icon">
+                            {{ form.phone_number }}
+                            {{ form.phone_number.errors }}
+                            <span class="input-group-addon">
+										<span class="icon icon-lg">
+											<i class="fa fa-user"></i>
+										</span>
+									</span>
+                        </div>
+                    </div>
+
+
+
+        <div class="clearfix">
+
+                        <a class="pull-right" href="{% url 'register' %}">New User?</a>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="checkbox-custom checkbox-default">
+
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            <button class="btn btn-primary hidden-xs" type="submit">Sign In</button>
+                            <button class="btn btn-primary btn-block btn-lg visible-xs mt-lg" type="submit">Sign In
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <p class="text-center text-muted mt-md mb-md">&copy; Copyright {% now 'Y' %}. All rights reserved.</p>
+    </div>
+</section>
+<!-- end: page -->
+
+<!-- Vendor -->
+<script src="{% static 'django_task/js/jquery.min.js' %}"></script>
+<script src="{% static 'django_task/js/jquery.browser.mobile.js' %}"></script>
+<script src="{% static 'django_task/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'django_task/js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'django_task/js/success_message/message_container.js' %}"></script>
+
+<script>
+
+</script>
+
+</body>
+</html>

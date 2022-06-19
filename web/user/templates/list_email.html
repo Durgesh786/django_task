@@ -1,0 +1,63 @@
+{% extends "django_task/base.html" %}
+{% load    static %}
+{% block css-head %}
+    <link href="{% static 'django_task/css/select2.css' %}" rel="stylesheet">
+    <link href="{% static 'django_task/css/datatables.css' %}" rel="stylesheet">
+{% endblock css-head %}
+{% block title %}List Food{% endblock %}
+{% block content %}
+    <header class="page-header">
+        <h2>List Emails</h2>
+
+        <div class="right-wrapper pull-right">
+            <a class="mb-xs mr-xs btn btn-primary" href="{% url 'add_email' %}"
+               style="margin-top: 9px">
+                <i class="fa fa-fw fa-plus" style="margin-right: 6px"></i>Add Email
+            </a>
+        </div>
+
+
+    </header>
+    <section class="panel">
+        <div class="panel-body">
+            {% include 'django_task/base_message.html' %}
+            <table class="table table-bordered table-striped mb-none" id="example1">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>email</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for user_email in user_email_obj %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ user_email.email }}</td>
+
+
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+            <a class="mb-xs mt-xs mr-xs modal-basic dummy_btn  btn btn-primary" href="#modalPrimary"
+               style="display:none">Primary</a>
+
+        </div>
+    </section>
+{% endblock content %}
+{% block js-foot %}
+    <script src="{% static 'django_task/js/select2.js' %}"></script>
+    <script src="{% static 'django_task/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'django_task/js/datatables.js' %}"></script>
+    <script src="{% static 'django_task/js/success_message/message_container.js' %}"></script>
+{% endblock js-foot %}
+
+{% block javascript %}
+
+    <script>
+    </script>
+
+{% endblock javascript %}

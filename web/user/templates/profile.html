@@ -1,0 +1,68 @@
+{% extends "django_task/base.html" %}
+{% load    static %}
+{% block css-head %}
+<link href="{% static 'django_task/css/select2.css' %}" rel="stylesheet">
+<link href="{% static 'django_task/css/datatables.css' %}" rel="stylesheet">
+<link href="{% static 'django_task/css/bootstrap-fileupload.min.css' %}" rel="stylesheet">
+{% endblock css-head %}
+
+{% block content %}
+{% include 'django_task/base_message.html' %}
+<header class="page-header">
+    <h2>My Profile</h2>
+
+    <div class="right-wrapper pull-right">
+
+    </div>
+</header>
+<section class="panel">
+    <header class="panel-heading">
+        <div class="panel-actions">
+
+        </div>
+
+    </header>
+
+    <form class="form-horizontal form-bordered" id="profile"
+          method="post">
+        <div class="panel-body">
+
+            <div class="form-group">
+                <label class="col-md-3 control-label">{{ form.email.label }}<span
+                        class="required_fields">*</span></label>
+                <div class="col-md-6">
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 control-label">{{ form.is_primary.label }}<span
+                        class="required_fields">*</span></label>
+                <div class="col-md-6">
+                    {{ form.is_primary }}
+                    {{ form.is_primary.errors }}
+                </div>
+            </div>
+
+
+            {% csrf_token %}
+
+
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-sm-9 col-sm-offset-5">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </footer>
+    </form>
+
+</section>
+{% endblock content %}
+{% block js-foot %}
+    <script src="{% static 'django_task/js/ios7-switch.js' %}"></script>
+    <script src="{% static 'django_task/js/select2.js' %}"></script>
+    <script src="{% static 'django_task/js/success_message/message_container.js' %}"></script>
+{% endblock js-foot %}
